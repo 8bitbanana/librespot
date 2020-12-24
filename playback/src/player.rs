@@ -25,6 +25,8 @@ use crate::audio_backend::Sink;
 use crate::metadata::{AudioItem, FileFormat};
 use crate::mixer::AudioFilter;
 
+use crate::winconsole;
+
 const PRELOAD_NEXT_TRACK_BEFORE_END_DURATION_MS: u32 = 30000;
 
 pub struct Player {
@@ -725,6 +727,7 @@ impl PlayerTrackLoader {
             stream_loader_controller.set_stream_mode();
         }
         let stream_position_pcm = PlayerInternal::position_ms_to_pcm(position_ms);
+        winconsole::console::set_title(&audio.name).unwrap();
         info!("<{}> ({} ms) loaded", audio.name, audio.duration);
         Some(PlayerLoadedTrackData {
             decoder,

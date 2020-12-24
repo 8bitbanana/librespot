@@ -5,6 +5,8 @@ extern crate byteorder;
 extern crate futures;
 extern crate shell_words;
 
+extern crate winconsole;
+
 #[cfg(feature = "alsa-backend")]
 extern crate alsa;
 

@@ -22,6 +22,8 @@ futures = "0.1"
 log = "0.4"
 byteorder = "1.3"
 shell-words = "1.0.0"
+winconsole = "0.11.1"
+
 
 alsa            = { version = "0.2", optional = true }
 portaudio-rs    = { version = "0.3", optional = true }
